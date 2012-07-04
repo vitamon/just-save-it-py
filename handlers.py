@@ -19,16 +19,18 @@ class IndexPage(BaseHandler):
 class GateWay(BaseHandler):
     def get(self):
         params = self.request.GET
-#        self.render_template('params.html', **{'params': params})
+        data = datastore.retrieve(appmodel.get_id(**params))
+        self.render_template('params.html', **{'params': data})
 
-#    def post(self):
-#        params = self.request.POST
+
+    def post(self):
+        params = self.request.POST
 
         if not appmodel.valid(**params):
             self.set_status(404)
             return
 
-        datastore.persist(appmodel.as_json(params))
+        datastore.persist(appmodel.as_json(**params), appmodel.get_id(**params))
         self.set_status(202)
 
     def set_status(self, value):

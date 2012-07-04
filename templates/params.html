@@ -5,9 +5,9 @@
     <title>Just save it</title>
 </head>
 <body>
-Sent params:<br>
-{%- for key, value in params.items() %}
-{{ key }} = {{ value }} <br>
-{%- endfor %}
+Saved data:<br>
+{% for x in params %}
+   {{ x.date.strftime('%m/%d/%Y %I:%M%p') }} : {{ x.jsoned_params}} <br>
+{% endfor %}
 </body>
 </html>
