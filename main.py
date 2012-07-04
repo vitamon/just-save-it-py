@@ -1,9 +1,9 @@
 import webapp2
 import config
-from pages import MainPage, GateWay
+from handlers import IndexPage, GateWay
 
 application_paths = [
-    ('/', MainPage),
+    ('/', IndexPage),
     ('/json', GateWay)
 ]
 
