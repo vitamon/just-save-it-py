@@ -12,10 +12,7 @@ def as_json(**params):
 
 
 def list_as_json(data):
-    result = ""
-    for d in data:
-        result += d.jsoned_params + ","
-
+    result = ''.join(s.jsoned_params + "," for s in data)
     return "[" + result[:-1] + "]"
 
 
