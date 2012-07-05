@@ -5,27 +5,46 @@
     <title>Just save it</title>
 </head>
 <body>
+<h2>Hello, {{name}}!</h2>
 usage:<br>
-http://just-save-it.appspot.com/json?=value1&param2=value2 ...<br>
+http://just-save-it.appspot.com/save?app_id=app_id&amp;param1=value1&amp;param2=value2 ...<br>
+<p>
+To get them back as json:<br>
+http://just-save-it.appspot.com/json?app_id=app_id<br>
+<br>
+Returns:<br>
+400 if, no app_id<br>
+202 if, ok<br>
+
 
 <p>
-
-<form method="post" action="/json">
+    Simple test form to store data:<br>
+<form method="post" action="/save">
     <label>
-         app_id <input name="app_id" value=""/>
+        app_id <input name="app_id" value=""/>
     </label>
     <br>
 
     <label>
-         name <input name="param1" value=""/>
+        param1 <input name="param1" value=""/>
     </label>
     <br>
 
     <label>
-         name <input name="param2" value=""/>
+        param2 <input name="param2" value=""/>
     </label>
     <br>
 
+    <input type="submit">
+</form>
+
+<p>
+Simple test form to retrieve data:<br>
+<form method="get" action="/preview">
+    <label>
+        app_id <input name="app_id" value=""/>
+    </label>
+    <br>
     <input type="submit">
 </form>
 </body>
