@@ -3,7 +3,5 @@ just-save-it-py
 
 just-save-it in python
 
-todo:
-add save to db
-
-add memcached?
+see:
+http://just-save-it-py.appspot.com/
